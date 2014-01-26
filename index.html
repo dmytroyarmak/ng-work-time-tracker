@@ -6,18 +6,22 @@
     <title>ng-work-time-tracker</title>
     <meta name="description" content="Simple time tracker that makes it easy to record what are you doing at office">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="css/obvious-buttons.css">
+    <link rel="stylesheet" href="css/main.css">
   </head>
-  <body ng-controller="ActivityListCtrl">
-    <h1>ng-work-time-tracker</h1>
-    <p>Simple time tracker that makes it easy to record what are you doing at office</p>
-    <h2>Current activity</h2>
-    <div>{{currentActivity.name}}</div>
-    <h2>Activities</h2>
-    <ul>
+  <body>
+    <header class="header">
+      <h1 class="header-title">ng-work-time-tracker</h1>
+      <p class="header-desctiption">Simple time tracker that makes it easy to record what are you doing at office</p>
+    </header>
+    <ul class="button-list" ng-controller="ActivityListCtrl">
       <li ng-repeat="activity in activities">
-        <button ng-click="setCurrentActivity(activity)">{{activity.name}}</button>
+        <button ng-click="setCurrentActivity(activity)" class="button button-xlarge button-{{activity.cssClass}}">{{activity.name}}</button>
       </li>
     </ul>
+    <h2>Current activity</h2>
+    <div>{{currentActivity.name}}</div>
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/controllers.js"></script>
   </body>

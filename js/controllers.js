@@ -1,16 +1,16 @@
 var workTimeTrackerApp = angular.module('workTimeTrackerApp', []);
 
-workTimeTrackerApp.controller('ActivityListCtrl', function ($scope) {
+workTimeTrackerApp.controller('ActivityListCtrl', function ($scope, $rootScope) {
   $scope.activities = [
-    {name: 'Working'},
-    {name: 'Eating'},
-    {name: 'Rest'},
-    {name: 'Web surfing'},
-    {name: 'Off-topic'},
-    {name: 'Consulting'}
+    {name: 'Working', cssClass: 'default'},
+    {name: 'Eating', cssClass: 'primary'},
+    {name: 'Rest', cssClass: 'info'},
+    {name: 'Web surfing', cssClass: 'success'},
+    {name: 'Off-topic', cssClass: 'warning'},
+    {name: 'Consulting', cssClass: 'danger'}
   ];
 
   $scope.setCurrentActivity = function(activity) {
-    $scope.currentActivity = activity;
+    $rootScope.currentActivity = activity;
   };
 });
