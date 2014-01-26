@@ -1,0 +1,19 @@
+{
+  "name": "ng-work-time-tracker",
+  "version": "0.0.1",
+  "homepage": "https://github.com/dmytroyarmak/ng-work-time-tracker",
+  "authors": [
+    "Dmytro Yarmak <dmytroyarmak@gmail.com>"
+  ],
+  "description": "Simple time tracker that makes it easy to record what are you doing at office",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
