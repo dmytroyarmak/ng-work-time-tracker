@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="workTimeTrackerApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ng-work-time-tracker</title>
+    <meta name="description" content="Simple time tracker that makes it easy to record what are you doing at office">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body ng-controller="ActivityListCtrl">
+    <h1>ng-work-time-tracker</h1>
+    <p>Simple time tracker that makes it easy to record what are you doing at office</p>
+    <h2>Current activity</h2>
+    <div>{{currentActivity.name}}</div>
+    <h2>Activities</h2>
+    <ul>
+      <li ng-repeat="activity in activities">
+        <button ng-click="setCurrentActivity(activity)">{{activity.name}}</button>
+      </li>
+    </ul>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/controllers.js"></script>
+  </body>
+</html>
