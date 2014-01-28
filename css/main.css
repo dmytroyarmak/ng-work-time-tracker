@@ -1,3 +1,7 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
 .header {
   background: #fafafa;
   border-bottom: 5px solid #e6e6e6;
@@ -6,6 +10,7 @@
 
 .header-title {
   margin: 0;
+  font-size: 55px;
   font-weight: normal;
 }
 
