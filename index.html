@@ -11,18 +11,16 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:400,700">
   </head>
-  <body>
+  <body class="bg-{{currentActivity.cssClass || 'default'}}">
     <header class="header">
       <h1 class="header-title">ng-work-time-tracker</h1>
       <p class="header-desctiption">Simple time tracker that makes it easy to record what are you doing at office</p>
     </header>
     <ul class="button-list" ng-controller="ActivityListCtrl">
       <li ng-repeat="activity in activities">
-        <button ng-click="setCurrentActivity(activity)" class="button button-xlarge button-{{activity.cssClass}}">{{activity.name}}</button>
+        <button ng-click="setCurrentActivity(activity)" class="button button-xlarge button-{{activity.cssClass}}" ng-class="{'is-active': currentActivity==activity}">{{activity.name}}</button>
       </li>
     </ul>
-    <h2>Current activity</h2>
-    <div>{{currentActivity.name}}</div>
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/controllers.js"></script>
   </body>

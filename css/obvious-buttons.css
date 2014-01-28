@@ -37,7 +37,8 @@
   transition-timing-function: linear;
 }
 .button:hover,
-.button:focus {
+.button:focus,
+.button.is-active {
   background: #e6e6e6;
   color: #222222;
 }
@@ -56,7 +57,8 @@
   color: #fafafa;
 }
 .button.button-primary:hover,
-.button.button-primary:focus {
+.button.button-primary:focus,
+.button.button-primary.is-active {
   background: #006da3;
   color: #fafafa;
 }
@@ -68,7 +70,8 @@
   color: #fafafa;
 }
 .button.button-info:hover,
-.button.button-info:focus {
+.button.button-info:focus,
+.button.button-info.is-active {
   background: #339bba;
   color: #fafafa;
 }
@@ -80,7 +83,8 @@
   color: #fafafa;
 }
 .button.button-success:hover,
-.button.button-success:focus {
+.button.button-success:focus,
+.button.button-success.is-active {
   background: #47a247;
   color: #fafafa;
 }
@@ -92,7 +96,8 @@
   color: #fafafa;
 }
 .button.button-warning:hover,
-.button.button-warning:focus {
+.button.button-warning:focus,
+.button.button-warning.is-active {
   background: #f9960a;
   color: #fafafa;
 }
@@ -104,7 +109,8 @@
   color: #fafafa;
 }
 .button.button-danger:hover,
-.button.button-danger:focus {
+.button.button-danger:focus,
+.button.button-danger.is-active {
   background: #d0312a;
   color: #fafafa;
 }
@@ -116,7 +122,8 @@
   color: #fafafa;
 }
 .button.button-inverse:hover,
-.button.button-inverse:focus {
+.button.button-inverse:focus,
+.button.button-inverse.is-active {
   background: #222222;
   color: #fafafa;
 }
@@ -126,7 +133,8 @@
 .button:hover {
   text-decoration: none;
 }
-.button:focus {
+.button:focus,
+.button.is-active {
   text-decoration: none;
   outline: none;
 }
@@ -148,7 +156,8 @@
   color: #222222;
 }
 .button-small:hover,
-.button-small:focus {
+.button-small:focus,
+.button-small.is-active {
   background: #e6e6e6;
   color: #222222;
 }
@@ -167,7 +176,8 @@
   color: #fafafa;
 }
 .button-small.button-primary:hover,
-.button-small.button-primary:focus {
+.button-small.button-primary:focus,
+.button-small.button-primary.is-active {
   background: #006da3;
   color: #fafafa;
 }
@@ -179,7 +189,8 @@
   color: #fafafa;
 }
 .button-small.button-info:hover,
-.button-small.button-info:focus {
+.button-small.button-info:focus,
+.button-small.button-info.is-active {
   background: #339bba;
   color: #fafafa;
 }
@@ -191,7 +202,8 @@
   color: #fafafa;
 }
 .button-small.button-success:hover,
-.button-small.button-success:focus {
+.button-small.button-success:focus,
+.button-small.button-success.is-active {
   background: #47a247;
   color: #fafafa;
 }
@@ -203,7 +215,8 @@
   color: #fafafa;
 }
 .button-small.button-warning:hover,
-.button-small.button-warning:focus {
+.button-small.button-warning:focus,
+.button-small.button-warning.is-active {
   background: #f9960a;
   color: #fafafa;
 }
@@ -215,7 +228,8 @@
   color: #fafafa;
 }
 .button-small.button-danger:hover,
-.button-small.button-danger:focus {
+.button-small.button-danger:focus,
+.button-small.button-danger.is-active {
   background: #d0312a;
   color: #fafafa;
 }
@@ -227,7 +241,8 @@
   color: #fafafa;
 }
 .button-small.button-inverse:hover,
-.button-small.button-inverse:focus {
+.button-small.button-inverse:focus,
+.button-small.button-inverse.is-active {
   background: #222222;
   color: #fafafa;
 }
@@ -244,7 +259,8 @@
   color: #222222;
 }
 .button-large:hover,
-.button-large:focus {
+.button-large:focus,
+.button-large.is-active {
   background: #e6e6e6;
   color: #222222;
 }
@@ -263,7 +279,8 @@
   color: #fafafa;
 }
 .button-large.button-primary:hover,
-.button-large.button-primary:focus {
+.button-large.button-primary:focus,
+.button-large.button-primary.is-active {
   background: #006da3;
   color: #fafafa;
 }
@@ -275,7 +292,8 @@
   color: #fafafa;
 }
 .button-large.button-info:hover,
-.button-large.button-info:focus {
+.button-large.button-info:focus,
+.button-large.button-info.is-active {
   background: #339bba;
   color: #fafafa;
 }
@@ -287,7 +305,8 @@
   color: #fafafa;
 }
 .button-large.button-success:hover,
-.button-large.button-success:focus {
+.button-large.button-success:focus,
+.button-large.button-success.is-active {
   background: #47a247;
   color: #fafafa;
 }
@@ -299,7 +318,8 @@
   color: #fafafa;
 }
 .button-large.button-warning:hover,
-.button-large.button-warning:focus {
+.button-large.button-warning:focus,
+.button-large.button-warning.is-active {
   background: #f9960a;
   color: #fafafa;
 }
@@ -311,7 +331,8 @@
   color: #fafafa;
 }
 .button-large.button-danger:hover,
-.button-large.button-danger:focus {
+.button-large.button-danger:focus,
+.button-large.button-danger.is-active {
   background: #d0312a;
   color: #fafafa;
 }
@@ -323,7 +344,8 @@
   color: #fafafa;
 }
 .button-large.button-inverse:hover,
-.button-large.button-inverse:focus {
+.button-large.button-inverse:focus,
+.button-large.button-inverse.is-active {
   background: #222222;
   color: #fafafa;
 }
@@ -340,7 +362,8 @@
   color: #222222;
 }
 .button-xlarge:hover,
-.button-xlarge:focus {
+.button-xlarge:focus,
+.button-xlarge.is-active {
   background: #e6e6e6;
   color: #222222;
 }
@@ -359,7 +382,8 @@
   color: #fafafa;
 }
 .button-xlarge.button-primary:hover,
-.button-xlarge.button-primary:focus {
+.button-xlarge.button-primary:focus,
+.button-xlarge.button-primary.is-active {
   background: #006da3;
   color: #fafafa;
 }
@@ -371,7 +395,8 @@
   color: #fafafa;
 }
 .button-xlarge.button-info:hover,
-.button-xlarge.button-info:focus {
+.button-xlarge.button-info:focus,
+.button-xlarge.button-info.is-active {
   background: #339bba;
   color: #fafafa;
 }
@@ -383,7 +408,8 @@
   color: #fafafa;
 }
 .button-xlarge.button-success:hover,
-.button-xlarge.button-success:focus {
+.button-xlarge.button-success:focus,
+.button-xlarge.button-success.is-active {
   background: #47a247;
   color: #fafafa;
 }
@@ -395,7 +421,8 @@
   color: #fafafa;
 }
 .button-xlarge.button-warning:hover,
-.button-xlarge.button-warning:focus {
+.button-xlarge.button-warning:focus,
+.button-xlarge.button-warning.is-active {
   background: #f9960a;
   color: #fafafa;
 }
@@ -407,7 +434,8 @@
   color: #fafafa;
 }
 .button-xlarge.button-danger:hover,
-.button-xlarge.button-danger:focus {
+.button-xlarge.button-danger:focus,
+.button-xlarge.button-danger.is-active {
   background: #d0312a;
   color: #fafafa;
 }
@@ -419,7 +447,8 @@
   color: #fafafa;
 }
 .button-xlarge.button-inverse:hover,
-.button-xlarge.button-inverse:focus {
+.button-xlarge.button-inverse:focus,
+.button-xlarge.button-inverse.is-active {
   background: #222222;
   color: #fafafa;
 }
