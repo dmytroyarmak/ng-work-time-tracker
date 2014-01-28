@@ -1,6 +1,6 @@
 var workTimeTrackerApp = angular.module('workTimeTrackerApp', []);
 
-workTimeTrackerApp.controller('ActivityListCtrl', function ($scope, $rootScope) {
+workTimeTrackerApp.controller('ActivityListCtrl', ['$scope', '$rootScope', 'flipClock', function ($scope, $rootScope, flipClock) {
   $scope.activities = [
     {name: 'Working', cssClass: 'default'},
     {name: 'Eating', cssClass: 'primary'},
@@ -12,5 +12,7 @@ workTimeTrackerApp.controller('ActivityListCtrl', function ($scope, $rootScope) 
 
   $scope.setCurrentActivity = function(activity) {
     $rootScope.currentActivity = activity;
+    flipClock.setTime(1);
+    flipClock.start();
   };
-});
+}]);

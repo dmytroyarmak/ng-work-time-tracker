@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
     <link rel="stylesheet" href="css/obvious-buttons.css">
+    <link rel="stylesheet" href="bower_components/FlipClock/compiled/flipclock.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:400,700">
   </head>
@@ -21,7 +22,11 @@
         <button ng-click="setCurrentActivity(activity)" class="button button-xlarge button-{{activity.cssClass}}" ng-class="{'is-active': currentActivity==activity}">{{activity.name}}</button>
       </li>
     </ul>
+    <div class="j-flip-clock"></div>
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/FlipClock/compiled/flipclock.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/controllers.js"></script>
+    <script src="js/factories.js"></script>
   </body>
 </html>

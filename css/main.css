@@ -54,3 +54,8 @@ body {
 .button-list li .button {
   padding: 0 35px;
 }
+
+.flip-clock-wrapper {
+  width: 460px;
+  margin: 150px auto 0;
+}
