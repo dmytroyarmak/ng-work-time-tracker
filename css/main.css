@@ -74,6 +74,7 @@ body {
   background: #fafafa;
   list-style: none;
   text-align: center;
+  z-index: 2;
 }
 
 .menu-icons-panel li {
