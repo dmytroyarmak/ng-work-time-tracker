@@ -1,6 +1,7 @@
 body {
   font-family: 'Raleway', sans-serif;
-  transition: background-color 0.2s;
+  color: #222222;
+  transition: background-color 0.5s;
 }
 
 .bg-default {
@@ -58,4 +59,35 @@ body {
 .flip-clock-wrapper {
   width: 460px;
   margin: 150px auto 0;
+}
+
+.menu-icons-panel {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px 0;
+  border-top: 5px solid #e6e6e6;
+  margin: 0;
+  background: #fafafa;
+  list-style: none;
+  text-align: center;
+}
+
+.menu-icons-panel li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.menu-icons-panel a {
+  color: #6f6f6f;
+  transition: color 0.2s;
+}
+
+.menu-icons-panel a:hover,
+.menu-icons-panel a:active {
+  color: black;
+}
+
+.menu-icons-panel a.is-active {
+  color: #222222;
 }

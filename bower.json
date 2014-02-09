@@ -20,6 +20,7 @@
     "angular": "~1.2.10",
     "normalize-css": "~2.1.3",
     "FlipClock": "*",
-    "jquery": "~2.1.0"
+    "jquery": "~2.1.0",
+    "font-awesome": "~4.0.3"
   }
 }
