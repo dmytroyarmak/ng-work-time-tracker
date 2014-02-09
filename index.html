@@ -6,7 +6,7 @@
     <title>ng-work-time-tracker</title>
     <meta name="description" content="Simple time tracker that makes it easy to record what are you doing at office">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/obvious-buttons.css">
     <link rel="stylesheet" href="bower_components/FlipClock/compiled/flipclock.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
@@ -25,13 +25,15 @@
     </ul>
     <div ng-flip-clock></div>
     <ul class="menu-icons-panel">
-      <li><a class="is-active" href=""><i class="fa fa-clock-o fa-2x"></i></a></li>
-      <li><a href=""><i class="fa fa-bar-chart-o fa-2x"></i></a></li>
-      <li><a href=""><i class="fa fa-gear fa-2x"></i></a></li>
+      <li><a tooltip="Track you time" class="is-active" href=""><i class="fa fa-clock-o"></i></a></li>
+      <li><a tooltip="Statistics" href=""><i class="fa fa-bar-chart-o"></i></a></li>
+      <li><a tooltip="Settings" href=""><i class="fa fa-gear"></i></a></li>
     </ul>
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/FlipClock/compiled/flipclock.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="js/modules.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/factories.js"></script>

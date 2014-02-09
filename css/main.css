@@ -1,4 +1,5 @@
 body {
+  margin: 0;
   font-family: 'Raleway', sans-serif;
   color: #222222;
   transition: background-color 0.5s;
@@ -30,6 +31,8 @@ body {
 
 
 .header {
+  padding: 20px 0 10px;
+  margin-bottom: 10px;
   background: #fafafa;
   border-bottom: 5px solid #e6e6e6;
   text-align: center;
@@ -80,6 +83,7 @@ body {
 
 .menu-icons-panel a {
   color: #6f6f6f;
+  font-size: 2em;
   transition: color 0.2s;
 }
 
