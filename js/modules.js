@@ -1,1 +1,1 @@
-angular.module('workTimeTrackerApp', ['ui.bootstrap']);
+angular.module('workTimeTrackerApp', ['ui.bootstrap', 'ngRoute']);

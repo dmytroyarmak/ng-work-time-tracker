@@ -18,12 +18,7 @@
       <h1 class="header-title">ng-work-time-tracker</h1>
       <p class="header-desctiption">Simple time tracker that makes it easy to record what are you doing at office</p>
     </header>
-    <ul class="button-list" ng-controller="ActivityListCtrl">
-      <li ng-repeat="activity in activities">
-        <button ng-click="setCurrentActivity(activity)" class="button button-xlarge button-{{activity.cssClass}}" ng-class="{'is-active': currentActivity==activity}">{{activity.name}}</button>
-      </li>
-    </ul>
-    <div ng-flip-clock></div>
+    <div ng-view></div>
     <ul class="menu-icons-panel">
       <li><a tooltip="Track you time" class="is-active" href=""><i class="fa fa-clock-o"></i></a></li>
       <li><a tooltip="Statistics" href=""><i class="fa fa-bar-chart-o"></i></a></li>
@@ -32,9 +27,11 @@
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/FlipClock/compiled/flipclock.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="js/modules.js"></script>
+    <script src="js/router.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/factories.js"></script>
     <script src="js/directives.js"></script>
