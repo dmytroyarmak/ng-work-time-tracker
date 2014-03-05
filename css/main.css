@@ -3,6 +3,7 @@ body {
   font-family: 'Raleway', sans-serif;
   color: #222222;
   transition: background-color 0.5s;
+  text-align: center;
 }
 
 .bg-default {

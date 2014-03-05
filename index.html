@@ -19,10 +19,10 @@
       <p class="header-desctiption">Simple time tracker that makes it easy to record what are you doing at office</p>
     </header>
     <div ng-view></div>
-    <ul class="menu-icons-panel">
-      <li><a tooltip="Track you time" class="is-active" href=""><i class="fa fa-clock-o"></i></a></li>
-      <li><a tooltip="Statistics" href=""><i class="fa fa-bar-chart-o"></i></a></li>
-      <li><a tooltip="Settings" href=""><i class="fa fa-gear"></i></a></li>
+    <ul class="menu-icons-panel" ng-controller="navCtrl">
+      <li><a tooltip="Track you time" ng-class="navClass('')" href="#/activities"><i class="fa fa-clock-o"></i></a></li>
+      <li><a tooltip="Statistics" ng-class="navClass('statistics')" href="#/statistics"><i class="fa fa-bar-chart-o"></i></a></li>
+      <li><a tooltip="Settings" ng-class="navClass('settings')" href="#/settings"><i class="fa fa-gear"></i></a></li>
     </ul>
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/FlipClock/compiled/flipclock.js"></script>
