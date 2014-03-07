@@ -2,6 +2,9 @@ angular.module('workTimeTrackerApp').directive('ngFlipClock', ['flipClock', func
   return {
     link: function(scope, element, attrs) {
       flipClock.setElement(element);
+      element.bind('$destroy', function() {
+        flipClock.unsetElement();
+      });
     }
   };
 }]);
