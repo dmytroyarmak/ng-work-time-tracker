@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding: 140px 0 60px;
   font-family: 'Raleway', sans-serif;
   color: #222222;
   transition: background-color 0.5s;
@@ -32,11 +33,14 @@ body {
 
 
 .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   padding: 20px 0 10px;
-  margin-bottom: 10px;
   background: #fafafa;
   border-bottom: 5px solid #e6e6e6;
   text-align: center;
+  z-index: 2;
 }
 
 .header-title {
@@ -66,7 +70,7 @@ body {
 }
 
 .menu-icons-panel {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   padding: 10px 0;
