@@ -97,3 +97,34 @@ body {
 .menu-icons-panel a.is-active {
   color: #222222;
 }
+
+.panel-narrow {
+  max-width: 650px;
+}
+
+.panel-flat {
+  box-shadow: 4px 4px rgba(230, 230, 230, 0.5);
+  border-radius: 0;
+}
+
+.list-group-flat .list-group-item {
+  border-radius: 0;
+}
+
+.activity-edit-form {
+  width: 220px;
+}
+
+.button span {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+  text-align: left;
+}
+
+.activity-btn-preview-box {
+  width: 320px;
+  float: left;
+}
