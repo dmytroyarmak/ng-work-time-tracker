@@ -9,7 +9,7 @@
     </h4>
     <hr>
     <ul class="list-unstyled">
-      <li ng-repeat="activity in activities">
+      <li ng-repeat="activity in activities | orderBy:'duration':true">
           <h5>{{activity.name}}</h5>
           <div class="progress">
             <div class="progress-bar progress-bar-{{activity.color}}" style="width: {{activity.getDurationInPct()}}%">
