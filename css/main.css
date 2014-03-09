@@ -147,3 +147,14 @@ body {
   animation: bounceOutDown .5s;
 }
 
+.activity-list-animation.ng-enter {
+  -webkit-animation: rotateInUpLeft .5s;
+  animation: rotateInUpLeft .5s;
+}
+
+
+.activity-list-animation.ng-leave {
+  -webkit-animation: hinge 1s;
+  animation: hinge 1s;
+  z-index: 1;
+}
