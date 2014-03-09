@@ -158,3 +158,9 @@ body {
   animation: hinge 1s;
   z-index: 1;
 }
+
+
+.statistics-animation.ng-move {
+  -webkit-animation: bounce 1s;
+  animation: bounce 1s;
+}
