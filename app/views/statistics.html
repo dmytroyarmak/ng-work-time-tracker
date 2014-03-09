@@ -3,9 +3,14 @@
     <h3 class="panel-title">Statistics</h3>
   </div>
   <div class="panel-body">
-    <ul class="list-group list-group-flat">
-      <li ng-repeat="activity in activities" class="list-group-item clearfix">
-          <h4>{{activity.name}}</h4>
+    <h4>
+      Today ({{ today | date:'longDate'}})
+      <a tooltip="Choose date" tooltip-placement="left" href="" class="pull-right"><i class="fa fa-calendar"></i></a>
+    </h4>
+    <hr>
+    <ul class="list-unstyled">
+      <li ng-repeat="activity in activities">
+          <h5>{{activity.name}}</h5>
           <div class="progress">
             <div class="progress-bar progress-bar-{{activity.color}}" style="width: {{activity.getDurationInPct()}}%">{{activity.duration}}</div>
           </div>
