@@ -12,7 +12,9 @@
       <li ng-repeat="activity in activities">
           <h5>{{activity.name}}</h5>
           <div class="progress">
-            <div class="progress-bar progress-bar-{{activity.color}}" style="width: {{activity.getDurationInPct()}}%">{{activity.duration}}</div>
+            <div class="progress-bar progress-bar-{{activity.color}}" style="width: {{activity.getDurationInPct()}}%">
+              {{activity.duration | timeDuration}}
+            </div>
           </div>
       </li>
     </ul>

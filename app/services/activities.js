@@ -17,12 +17,12 @@ angular.module('workTimeTrackerApp').factory('activities', function() {
     return (this.duration / activities.getSumOfDurations()) * 100;
   };
 
-  activities.push(new Activity('Working',     'default',  450));
-  activities.push(new Activity('Eating',      'primary',  50 ));
-  activities.push(new Activity('Rest',        'info',     45 ));
+  activities.push(new Activity('Working',     'default',  350));
+  activities.push(new Activity('Eating',      'primary',  40 ));
+  activities.push(new Activity('Rest',        'info',     50 ));
   activities.push(new Activity('Web surfing', 'success',  100));
-  activities.push(new Activity('Off-topic',   'warning',  30 ));
-  activities.push(new Activity('Consulting',  'danger',   120));
+  activities.push(new Activity('Off-topic',   'warning',  45 ));
+  activities.push(new Activity('Consulting',  'danger',   140));
 
   return {
     getAll: function() {
