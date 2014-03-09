@@ -8,8 +8,7 @@ angular.module('workTimeTrackerApp').controller('MainCtrl', ['$scope', '$rootSco
   }
 
   $scope.setCurrentActivity = function(activity) {
-    $rootScope.currentActivity = activity;
     $rootScope.startedAt = new Date();
-    flipClock.restart();
+    activities.setActive(activity);
   };
 }]);

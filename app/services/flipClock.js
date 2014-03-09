@@ -13,11 +13,13 @@ angular.module('workTimeTrackerApp').factory('flipClock', function FlipClockFact
       }
     },
     unsetElement: function() {
+      flipClock.stop();
       flipClock = null;
       onInit = null;
     },
     restart: function(startTime) {
       if (flipClock) {
+        flipClock.stop();
         flipClock.start();
         flipClock.setTime(startTime || 1);
       }

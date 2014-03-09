@@ -1,5 +1,6 @@
-angular.module('workTimeTrackerApp').factory('activities', function() {
-  var activities = [];
+angular.module('workTimeTrackerApp').factory('activities', ['flipClock', '$rootScope', '$interval', function(flipClock, $rootScope, $interval) {
+  var activities = [],
+      intervalPromise;
 
   activities.getSumOfDurations = function() {
     return this.reduce(function(mem, act) {
@@ -10,19 +11,19 @@ angular.module('workTimeTrackerApp').factory('activities', function() {
   var Activity = function(name, color, duration) {
     this.name = name;
     this.color = color;
-    this.duration = duration || 0;
+    this.duration = 0;
   };
 
   Activity.prototype.getDurationInPct = function() {
     return (this.duration / activities.getSumOfDurations()) * 100;
   };
 
-  activities.push(new Activity('Working',     'default',  350));
-  activities.push(new Activity('Eating',      'primary',  40 ));
-  activities.push(new Activity('Rest',        'info',     50 ));
-  activities.push(new Activity('Web surfing', 'success',  100));
-  activities.push(new Activity('Off-topic',   'warning',  45 ));
-  activities.push(new Activity('Consulting',  'danger',   140));
+  activities.push(new Activity('Working',     'default',  60*350));
+  activities.push(new Activity('Eating',      'primary',  60*40 ));
+  activities.push(new Activity('Rest',        'info',     60*50 ));
+  activities.push(new Activity('Web surfing', 'success',  60*100));
+  activities.push(new Activity('Off-topic',   'warning',  60*45 ));
+  activities.push(new Activity('Consulting',  'danger',   60*140));
 
   return {
     getAll: function() {
@@ -42,6 +43,21 @@ angular.module('workTimeTrackerApp').factory('activities', function() {
 
     addNew: function(name, color) {
       activities.push(new Activity(name, color));
+    },
+
+    setActive: function(activity) {
+      $rootScope.currentActivity = activity;
+
+      flipClock.restart(0);
+
+      if (intervalPromise) {
+        $interval.cancel(intervalPromise);
+        intervalPromise = null;
+      }
+
+      intervalPromise = $interval(function() {
+        activity.duration += 1;
+      }, 1000);
     }
   };
-});
+}]);
