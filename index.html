@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/obvious-buttons.css">
     <link rel="stylesheet" href="bower_components/FlipClock/compiled/flipclock.css">
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:400,700">
   </head>
@@ -18,9 +19,9 @@
       <h1 class="header-title">ng-work-time-tracker</h1>
       <p class="header-desctiption">Simple time tracker that makes it easy to record what are you doing at office</p>
     </header>
-    <div ng-view></div>
+    <div ng-view class="bounce-animation"></div>
     <ul class="menu-icons-panel" ng-controller="NavCtrl">
-      <li><a tooltip="Track you time" ng-class="navClass('')" href="#/activities"><i class="fa fa-clock-o"></i></a></li>
+      <li><a tooltip="Track you time" ng-class="navClass('')" href="#/"><i class="fa fa-clock-o"></i></a></li>
       <li><a tooltip="Statistics" ng-class="navClass('statistics')" href="#/statistics"><i class="fa fa-bar-chart-o"></i></a></li>
       <li><a tooltip="Settings" ng-class="navClass('settings')" href="#/settings"><i class="fa fa-gear"></i></a></li>
     </ul>
@@ -28,6 +29,7 @@
     <script src="bower_components/FlipClock/compiled/flipclock.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 

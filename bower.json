@@ -23,6 +23,8 @@
     "font-awesome": "~4.0.3",
     "angular-bootstrap": "~0.10.0",
     "bootstrap": "~3.1.0",
-    "angular-route": "~1.2.14"
+    "angular-route": "~1.2.14",
+    "animate.css": "~3.1.0",
+    "angular-animate": "~1.2.14"
   }
 }

@@ -1,4 +1,4 @@
-angular.module('workTimeTrackerApp', ['ui.bootstrap', 'ngRoute']).config(['$routeProvider', function($routeProvider) {
+angular.module('workTimeTrackerApp', ['ui.bootstrap', 'ngRoute', 'ngAnimate']).config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'app/views/main.html',

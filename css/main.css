@@ -132,3 +132,18 @@ body {
   width: 320px;
   float: left;
 }
+
+.bounce-animation.ng-enter,
+.bounce-animation.ng-enter.ng-enter-active {
+  -webkit-animation: bounceInDown .5s;
+  animation: bounceInDown .5s;
+}
+
+.bounce-animation.ng-leave,
+.bounce-animation.ng-leave.ng-leave-active {
+  position: absolute;
+  width: 100%;
+  -webkit-animation: bounceOutDown .5s;
+  animation: bounceOutDown .5s;
+}
+
