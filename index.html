@@ -19,7 +19,7 @@
       <p class="header-desctiption">Simple time tracker that makes it easy to record what are you doing at office</p>
     </header>
     <div ng-view></div>
-    <ul class="menu-icons-panel" ng-controller="navCtrl">
+    <ul class="menu-icons-panel" ng-controller="NavCtrl">
       <li><a tooltip="Track you time" ng-class="navClass('')" href="#/activities"><i class="fa fa-clock-o"></i></a></li>
       <li><a tooltip="Statistics" ng-class="navClass('statistics')" href="#/statistics"><i class="fa fa-bar-chart-o"></i></a></li>
       <li><a tooltip="Settings" ng-class="navClass('settings')" href="#/settings"><i class="fa fa-gear"></i></a></li>
@@ -30,10 +30,17 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="js/modules.js"></script>
-    <script src="js/router.js"></script>
-    <script src="js/factories.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/directives.js"></script>
+
+    <script src="app/app.js"></script>
+
+    <script src="app/controllers/nav.js"></script>
+    <script src="app/controllers/main.js"></script>
+    <script src="app/controllers/statistics.js"></script>
+    <script src="app/controllers/settings.js"></script>
+
+    <script src="app/directives/flipClock.js"></script>
+
+    <script src="app/services/activities.js"></script>
+    <script src="app/services/flipClock.js"></script>
   </body>
 </html>

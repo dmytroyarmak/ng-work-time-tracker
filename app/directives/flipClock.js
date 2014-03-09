@@ -1,4 +1,4 @@
-angular.module('workTimeTrackerApp').directive('ngFlipClock', ['flipClock', function flipClockDirective(flipClock) {
+angular.module('workTimeTrackerApp').directive('flipClock', ['flipClock', function flipClockDirective(flipClock) {
   return {
     link: function(scope, element, attrs) {
       flipClock.setElement(element);
