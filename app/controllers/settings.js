@@ -8,9 +8,6 @@ angular.module('workTimeTrackerApp').controller('SettingsCtrl', ['$scope', 'acti
   };
 
   $scope.addNew = function() {
-    activities.addNew({
-      name: '',
-      color: 'default'
-    });
+    activities.addNew('', 'default');
   };
 }]);

@@ -1,1 +1,15 @@
-<h3>Statistics</h3>
+<div class="panel panel-default panel-narrow panel-flat center-block">
+  <div class="panel-heading">
+    <h3 class="panel-title">Statistics</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="list-group list-group-flat">
+      <li ng-repeat="activity in activities" class="list-group-item clearfix">
+          <h4>{{activity.name}}</h4>
+          <div class="progress">
+            <div class="progress-bar progress-bar-{{activity.color}}" style="width: {{activity.getDurationInPct()}}%">{{activity.duration}}</div>
+          </div>
+      </li>
+    </ul>
+  </div>
+</div>

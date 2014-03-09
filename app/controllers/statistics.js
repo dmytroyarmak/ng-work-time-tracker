@@ -1,2 +1,3 @@
-angular.module('workTimeTrackerApp').controller('StatisticsCtrl', ['$scope', function ($scope) {
+angular.module('workTimeTrackerApp').controller('StatisticsCtrl', ['$scope', 'activities', function ($scope, activities) {
+  $scope.activities = activities.getAll();
 }]);
