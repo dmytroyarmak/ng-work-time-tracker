@@ -1,0 +1,22 @@
+{
+  "name": "ng-work-time-tracker",
+  "version": "1.0.0",
+  "description": "Simple time tracker that makes it easy to record what are you doing at office",
+  "main": "app/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmytroyarmak/ng-work-time-tracker.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "Dmytro Yarmak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dmytroyarmak/ng-work-time-tracker/issues"
+  },
+  "homepage": "https://github.com/dmytroyarmak/ng-work-time-tracker#readme"
+}
