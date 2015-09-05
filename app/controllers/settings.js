@@ -1,13 +1,17 @@
-angular.module('workTimeTrackerApp').controller('SettingsCtrl', ['$scope', 'activities', function ($scope, activities) {
-  $scope.activities = activities.getAll();
+(function(){
+  'use strict';
 
-  $scope.availableCssClasses = ['default', 'primary', 'info', 'success', 'warning', 'danger'];
+  angular.module('workTimeTrackerApp').controller('SettingsCtrl', ['$scope', 'activities', function ($scope, activities) {
+    $scope.activities = activities.getAll();
 
-  $scope.removeActiviry = function(activity) {
-    activities.remove(activity);
-  };
+    $scope.availableCssClasses = ['default', 'primary', 'info', 'success', 'warning', 'danger'];
 
-  $scope.addNew = function() {
-    activities.addNew('', 'default');
-  };
-}]);
+    $scope.removeActiviry = function(activity) {
+      activities.remove(activity);
+    };
+
+    $scope.addNew = function() {
+      activities.addNew('', 'default');
+    };
+  }]);
+}());

@@ -1,31 +1,35 @@
-angular.module('workTimeTrackerApp').factory('flipClock', function FlipClockFactory() {
-  var flipClock = null,
-      onInit = null;
+(function(){
+  'use strict';
 
-  return {
-    setElement: function(element) {
-      flipClock = element.FlipClock({
-        autoStart: false
-      });
-      if (onInit) {
-        onInit();
+  angular.module('workTimeTrackerApp').factory('flipClock', function FlipClockFactory() {
+    var flipClock = null,
         onInit = null;
-      }
-    },
-    unsetElement: function() {
-      flipClock.stop();
-      flipClock = null;
-      onInit = null;
-    },
-    restart: function(startTime) {
-      if (flipClock) {
+
+    return {
+      setElement: function(element) {
+        flipClock = element.FlipClock({
+          autoStart: false
+        });
+        if (onInit) {
+          onInit();
+          onInit = null;
+        }
+      },
+      unsetElement: function() {
         flipClock.stop();
-        flipClock.start();
-        flipClock.setTime(startTime || 1);
+        flipClock = null;
+        onInit = null;
+      },
+      restart: function(startTime) {
+        if (flipClock) {
+          flipClock.stop();
+          flipClock.start();
+          flipClock.setTime(startTime || 1);
+        }
+      },
+      onInit: function(callback) {
+        onInit = callback;
       }
-    },
-    onInit: function(callback) {
-      onInit = callback;
-    }
-  };
-});
+    };
+  });
+}());
