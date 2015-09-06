@@ -1,7 +1,11 @@
 (function(){
   'use strict';
 
-  angular.module('workTimeTrackerApp').factory('flipClock', function FlipClockFactory() {
+  angular
+    .module('workTimeTrackerApp')
+    .factory('flipClockService', flipClockService);
+
+  function flipClockService() {
     var flipClock = null,
         onInit = null;
 
@@ -31,5 +35,5 @@
         onInit = callback;
       }
     };
-  });
+  }
 }());

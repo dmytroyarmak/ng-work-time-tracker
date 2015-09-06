@@ -1,7 +1,12 @@
 (function(){
   'use strict';
 
-  angular.module('workTimeTrackerApp').factory('activities', ['flipClock', '$rootScope', '$interval', function(flipClock, $rootScope, $interval) {
+  angular
+    .module('workTimeTrackerApp')
+    .factory('activitiesService', activitiesService);
+
+  activitiesService.$inject = ['flipClockService', '$rootScope', '$interval'];
+  function activitiesService(flipClockService, $rootScope, $interval) {
     var activities = [],
         intervalPromise;
 
@@ -51,7 +56,7 @@
       setActive: function(activity) {
         $rootScope.currentActivity = activity;
 
-        flipClock.restart(0);
+        flipClockService.restart(0);
 
         if (intervalPromise) {
           $interval.cancel(intervalPromise);
@@ -63,5 +68,5 @@
         }, 1000);
       }
     };
-  }]);
+  }
 }());

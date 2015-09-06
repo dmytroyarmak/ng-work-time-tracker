@@ -1,7 +1,16 @@
 (function(){
   'use strict';
 
-  angular.module('workTimeTrackerApp', ['ui.bootstrap', 'ngRoute', 'ngAnimate']).config(['$routeProvider', function($routeProvider) {
+  angular
+    .module('workTimeTrackerApp', [
+      'ui.bootstrap',
+      'ngRoute',
+      'ngAnimate'
+    ])
+    .config(workTimeTrackerAppConfig);
+
+  workTimeTrackerAppConfig.$inject = ['$routeProvider'];
+  function workTimeTrackerAppConfig($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'app/views/main.html',
@@ -18,5 +27,5 @@
       .otherwise({
         redirectTo: '/'
       });
-  }]);
+  }
 }());

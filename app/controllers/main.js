@@ -1,18 +1,23 @@
 (function(){
   'use strict';
 
-  angular.module('workTimeTrackerApp').controller('MainCtrl', ['$scope', '$rootScope', 'flipClock', 'activities', function ($scope, $rootScope, flipClock, activities) {
-    $scope.activities = activities.getAll();
+  angular
+    .module('workTimeTrackerApp')
+    .controller('MainCtrl', MainCtrl);
+
+  MainCtrl.$inject = ['$scope', '$rootScope', 'flipClockService', 'activitiesService'];
+  function MainCtrl($scope, $rootScope, flipClockService, activitiesService) {
+    $scope.activities = activitiesService.getAll();
 
     if ($rootScope.startedAt) {
-      flipClock.onInit(function() {
-        flipClock.restart(Math.round((new Date() - $rootScope.startedAt)/1000));
+      flipClockService.onInit(function() {
+        flipClockService.restart(Math.round((new Date() - $rootScope.startedAt)/1000));
       });
     }
 
     $scope.setCurrentActivity = function(activity) {
       $rootScope.startedAt = new Date();
-      activities.setActive(activity);
+      activitiesService.setActive(activity);
     };
-  }]);
+  }
 }());
