@@ -4,6 +4,7 @@
   angular
     .module('workTimeTrackerApp', [
       'ui.bootstrap',
+      'dyFlipClock',
       'ngRoute',
       'ngAnimate'
     ])

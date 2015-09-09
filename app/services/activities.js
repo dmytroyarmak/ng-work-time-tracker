@@ -5,10 +5,11 @@
     .module('workTimeTrackerApp')
     .factory('activitiesService', activitiesService);
 
-  activitiesService.$inject = ['flipClockService', '$rootScope', '$interval'];
-  function activitiesService(flipClockService, $rootScope, $interval) {
+  activitiesService.$inject = ['$interval'];
+  function activitiesService($interval) {
     var activities = [],
-        intervalPromise;
+        intervalPromise,
+        currentActivity;
 
     activities.getSumOfDurations = function() {
       return this.reduce(function(mem, act) {
@@ -54,9 +55,7 @@
       },
 
       setActive: function(activity) {
-        $rootScope.currentActivity = activity;
-
-        flipClockService.restart(0);
+        currentActivity = activity;
 
         if (intervalPromise) {
           $interval.cancel(intervalPromise);
@@ -66,6 +65,10 @@
         intervalPromise = $interval(function() {
           activity.duration += 1;
         }, 1000);
+      },
+
+      getActive: function() {
+        return currentActivity;
       }
     };
   }

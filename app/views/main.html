@@ -1,6 +1,8 @@
 <ul class="button-list">
   <li ng-repeat="activity in activities">
-    <button ng-click="setCurrentActivity(activity)" class="button button-xlarge button-{{activity.color}}" ng-class="{'is-active': currentActivity==activity}">{{activity.name}}</button>
+    <button ng-click="setActive(activity)" class="button button-xlarge button-{{activity.color}}" ng-class="{'is-active': activity === getActive()}">{{activity.name}}</button>
   </li>
 </ul>
-<div flip-clock></div>
+<div ng-if="getActive()">
+  <dy-flip-clock time="getActive().duration * 1000"></dy-flip-clock>
+</div>

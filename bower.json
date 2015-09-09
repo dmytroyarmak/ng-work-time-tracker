@@ -18,13 +18,13 @@
   ],
   "dependencies": {
     "angular": "~1.4.5",
-    "angular-route": "~1.4.5",
     "angular-animate": "~1.4.5",
-    "FlipClock": "*",
-    "jquery": "~2.1.4",
-    "font-awesome": "~4.0.3",
     "angular-bootstrap": "~0.10.0",
+    "angular-flip-clock": "~0.2.0",
+    "angular-route": "~1.4.5",
+    "animate.css": "~3.1.0",
     "bootstrap": "~3.1.0",
-    "animate.css": "~3.1.0"
+    "font-awesome": "~4.0.3",
+    "jquery": "~2.1.4"
   }
 }
