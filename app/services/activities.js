@@ -5,8 +5,8 @@
     .module('workTimeTrackerApp')
     .factory('activitiesService', activitiesService);
 
-  activitiesService.$inject = ['$interval'];
-  function activitiesService($interval) {
+  activitiesService.$inject = ['$rootScope', '$interval'];
+  function activitiesService($rootScope, $interval) {
     var activities = [],
         intervalPromise,
         currentActivity;
@@ -56,6 +56,7 @@
 
       setActive: function(activity) {
         currentActivity = activity;
+        $rootScope.currentActivity = activity;
 
         if (intervalPromise) {
           $interval.cancel(intervalPromise);
