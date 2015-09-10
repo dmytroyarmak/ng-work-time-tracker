@@ -15,7 +15,8 @@
     $routeProvider
       .when('/', {
         templateUrl: 'app/views/main.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        controllerAs: 'vm'
       })
       .when('/settings', {
         templateUrl: 'app/views/settings.html',
