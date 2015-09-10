@@ -19,12 +19,29 @@
       <h1 class="header-title">ng-work-time-tracker</h1>
       <p class="header-desctiption">Simple time tracker that makes it easy to record what are you doing at office</p>
     </header>
+
     <div ng-view class="bounce-animation"></div>
-    <ul class="menu-icons-panel" ng-controller="NavCtrl">
-      <li><a tooltip="Track you time" ng-class="navClass('')" href="#/"><i class="fa fa-clock-o"></i></a></li>
-      <li><a tooltip="Statistics" ng-class="navClass('statistics')" href="#/statistics"><i class="fa fa-bar-chart-o"></i></a></li>
-      <li><a tooltip="Settings" ng-class="navClass('settings')" href="#/settings"><i class="fa fa-gear"></i></a></li>
+
+    <ul class="menu-icons-panel" ng-controller="NavCtrl as vm">
+      <li>
+        <a tooltip="Track you time" ng-class="vm.getPageClass('')" href="#/">
+          <i class="fa fa-clock-o"></i>
+        </a>
+      </li>
+
+      <li>
+        <a tooltip="Statistics" ng-class="vm.getPageClass('statistics')" href="#/statistics">
+          <i class="fa fa-bar-chart-o"></i>
+        </a>
+      </li>
+
+      <li>
+        <a tooltip="Settings" ng-class="vm.getPageClass('settings')" href="#/settings">
+          <i class="fa fa-gear"></i>
+        </a>
+      </li>
     </ul>
+
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
