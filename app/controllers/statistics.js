@@ -5,9 +5,20 @@
     .module('workTimeTrackerApp')
     .controller('StatisticsCtrl', StatisticsCtrl);
 
-  StatisticsCtrl.$inject = ['$scope', 'activitiesService'];
-  function StatisticsCtrl($scope, activitiesService) {
-    $scope.activities = activitiesService.getAll();
-    $scope.today = new Date();
+  StatisticsCtrl.$inject = ['activitiesService'];
+  function StatisticsCtrl(activitiesService) {
+    var vm = this;
+
+    vm.activities = null;
+    vm.today = null;
+
+    activate();
+
+    //////////
+
+    function activate () {
+      vm.activities = activitiesService.getAll();
+      vm.today = new Date();
+    }
   }
 }());

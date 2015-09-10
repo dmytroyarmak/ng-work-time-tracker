@@ -25,7 +25,8 @@
       })
       .when('/statistics', {
         templateUrl: 'app/views/statistics.html',
-        controller: 'StatisticsCtrl'
+        controller: 'StatisticsCtrl',
+        controllerAs: 'vm'
       })
       .otherwise({
         redirectTo: '/'

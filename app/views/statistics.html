@@ -4,12 +4,12 @@
   </div>
   <div class="panel-body">
     <h4>
-      Today ({{ today | date:'longDate'}})
+      Today ({{ vm.today | date:'longDate'}})
       <a tooltip="Choose date" tooltip-placement="left" href="" class="pull-right"><i class="fa fa-calendar"></i></a>
     </h4>
     <hr>
     <ul class="list-unstyled">
-      <li ng-repeat="activity in activities | orderBy:'duration':true" class="statistics-animation">
+      <li ng-repeat="activity in vm.activities | orderBy:'duration':true" class="statistics-animation">
           <h5>{{activity.name}}</h5>
           <div class="progress">
             <div class="progress-bar progress-bar-{{activity.color}}" style="width: {{activity.getDurationInPct()}}%">
