@@ -5,18 +5,29 @@
     .module('workTimeTrackerApp')
     .controller('SettingsCtrl', SettingsCtrl);
 
-  SettingsCtrl.$inject = ['$scope', 'activitiesService'];
-  function SettingsCtrl($scope, activitiesService) {
-    $scope.activities = activitiesService.getAll();
+  SettingsCtrl.$inject = ['activitiesService'];
+  function SettingsCtrl(activitiesService) {
+    var vm = this;
 
-    $scope.availableCssClasses = ['default', 'primary', 'info', 'success', 'warning', 'danger'];
+    vm.activities = null;
+    vm.availableColors = activitiesService.AVAILABLE_COLORS;
+    vm.removeActiviry = removeActiviry;
+    vm.addNewActivity = addNewActivity;
 
-    $scope.removeActiviry = function(activity) {
+    activate();
+
+    //////////
+
+    function activate () {
+      vm.activities = activitiesService.getAll();
+    }
+
+    function removeActiviry(activity) {
       activitiesService.remove(activity);
-    };
+    }
 
-    $scope.addNew = function() {
+    function addNewActivity () {
       activitiesService.addNew('', 'default');
-    };
+    }
   }
 }());

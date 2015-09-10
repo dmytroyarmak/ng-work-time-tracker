@@ -20,7 +20,8 @@
       })
       .when('/settings', {
         templateUrl: 'app/views/settings.html',
-        controller: 'SettingsCtrl'
+        controller: 'SettingsCtrl',
+        controllerAs: 'vm'
       })
       .when('/statistics', {
         templateUrl: 'app/views/statistics.html',

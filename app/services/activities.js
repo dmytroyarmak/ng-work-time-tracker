@@ -7,6 +7,7 @@
 
   activitiesService.$inject = ['$rootScope', '$interval'];
   function activitiesService($rootScope, $interval) {
+    var AVAILABLE_COLORS = ['default', 'primary', 'info', 'success', 'warning', 'danger'];
     var activities = [],
         intervalPromise,
         currentActivity;
@@ -35,6 +36,8 @@
     activities.push(new Activity('Consulting',  'danger',   60*140));
 
     return {
+      AVAILABLE_COLORS: AVAILABLE_COLORS,
+
       getAll: function() {
         activities
           .filter(function(activity) { return !activity.name; })

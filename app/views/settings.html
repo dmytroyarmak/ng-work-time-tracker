@@ -4,17 +4,17 @@
   </div>
   <div class="panel-body">
     <ul class="list-group list-group-flat">
-      <li ng-repeat="activity in activities" class="list-group-item clearfix activity-list-animation">
+      <li ng-repeat="activity in vm.activities" class="list-group-item clearfix activity-list-animation">
         <div class="activity-btn-preview-box">
           <button class="button button-xlarge button-{{activity.color}} center-block"><span>{{activity.name}}</span></button>
         </div>
         <div class="pull-right text-left activity-edit-form">
           <label>Name: <input type="text" ng-model="activity.name"></label><br>
-          <label>Color: <select ng-model="activity.color" ng-options="value for value in availableCssClasses"></select></label>
-          <button ng-click="removeActiviry(activity)" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i></button>
+          <label>Color: <select ng-model="activity.color" ng-options="value for value in vm.availableColors"></select></label>
+          <button ng-click="vm.removeActiviry(activity)" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i></button>
         </div>
       </li>
     </ul>
-    <button class="btn btn-default" ng-click="addNew()">Add New</button>
+    <button class="btn btn-default" ng-click="vm.addNewActivity()">Add New</button>
   </div>
 </div>
