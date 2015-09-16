@@ -3,6 +3,6 @@
     <button ng-click="vm.setActive(activity)" class="button button-xlarge button-{{activity.color}}" ng-class="{'is-active': vm.isActive(activity)}">{{activity.name}}</button>
   </li>
 </ul>
-<div ng-if="vm.hasActive()">
-  <dy-flip-clock time="vm.getDurationOfActiveActivity()"></dy-flip-clock>
+<div class="flip-clock-container" ng-if="vm.hasActive()">
+  <dy-flip-clock time="{{vm.getDurationOfActiveActivity()}}"></dy-flip-clock>
 </div>

@@ -18,7 +18,7 @@ function dyFlipClockDirective() {
   return {
     restrict: 'EA',
     scope: {
-      time: '='
+      time: '@'
     },
     bindToController: true,
     controller: 'DyFlipClockController',
@@ -48,27 +48,27 @@ function DyFlipClockController($interval) {
   //////////
 
   function getHoursTensPlace() {
-    return _getTensPlace(_getHours(vm.time));
+    return _getTensPlace(_getHours(_getTimeAsNumber()));
   }
 
   function getHoursOnesPlace() {
-    return _getOnesPlace(_getHours(vm.time));
+    return _getOnesPlace(_getHours(_getTimeAsNumber()));
   }
 
   function getMinutesTensPlace() {
-    return _getTensPlace(_getMinutes(vm.time));
+    return _getTensPlace(_getMinutes(_getTimeAsNumber()));
   }
 
   function getMinutesOnesPlace() {
-    return _getOnesPlace(_getMinutes(vm.time));
+    return _getOnesPlace(_getMinutes(_getTimeAsNumber()));
   }
 
   function getSecondsTensPlace() {
-    return _getTensPlace(_getSeconds(vm.time));
+    return _getTensPlace(_getSeconds(_getTimeAsNumber()));
   }
 
   function getSecondsOnesPlace() {
-    return _getOnesPlace(_getSeconds(vm.time));
+    return _getOnesPlace(_getSeconds(_getTimeAsNumber()));
   }
 
   function _getHours(time) {
@@ -93,6 +93,12 @@ function DyFlipClockController($interval) {
 
   function _getOnesPlace(number) {
     return number % 10;
+  }
+
+  function _getTimeAsNumber() {
+    var timeAsNumber = window.parseInt(vm.time, 10);
+    var isTimeNaN = (timeAsNumber !== timeAsNumber);
+    return isTimeNaN ? 0 : timeAsNumber;
   }
 }
 
@@ -175,7 +181,7 @@ function DyFlipClockNumberController($scope, $parse, $attrs) {
 
 angular.module('dyFlipClock').run(['$templateCache', function($templateCache) {
   $templateCache.put('src/js/angular-flip-clock-directive/angular-flip-clock-directive.html',
-    '<div class="flip-counter clock flip-clock-wrapper">\n' +
+    '<div class="dy-flip-clock">\n' +
     '  <dy-flip-clock-label text="Hours" hide-divider="true"></dy-flip-clock-label>\n' +
     '  <dy-flip-clock-number value="vm.getHoursTensPlace()"></dy-flip-clock-number>\n' +
     '  <dy-flip-clock-number value="vm.getHoursOnesPlace()"></dy-flip-clock-number>\n' +
@@ -194,31 +200,32 @@ angular.module('dyFlipClock').run(['$templateCache', function($templateCache) {
 
 angular.module('dyFlipClock').run(['$templateCache', function($templateCache) {
   $templateCache.put('src/js/angular-flip-clock-label-directive/angular-flip-clock-label-directive.html',
-    '<span class="flip-clock-divider" ng-class="{\'flip-clock-divider-hidden\': !!vm.hideDivider}">\n' +
-    '  <span class="flip-clock-label">{{vm.text}}</span>\n' +
-    '  <span class="flip-clock-dot top"></span>\n' +
-    '  <span class="flip-clock-dot bottom"></span>\n' +
+    '<span class="dy-flip-clock-divider" ng-class="{\'dy-flip-clock-divider-hidden\': !!vm.hideDivider}">\n' +
+    '  <span class="dy-flip-clock-label">{{vm.text}}</span>\n' +
+    '  <span class="dy-flip-clock-dot dy-flip-clock-dot-top"></span>\n' +
+    '  <span class="dy-flip-clock-dot dy-flip-clock-dot-bottom"></span>\n' +
     '</span>\n' +
     '');
 }]);
 
 angular.module('dyFlipClock').run(['$templateCache', function($templateCache) {
   $templateCache.put('src/js/angular-flip-clock-number-directive/angular-flip-clock-number-directive.html',
-    '<ul class="flip" ng-class="{\'play\': vm.isAnimated()}">\n' +
+    '<ul class="dy-flip-clock-number" ng-class="{\'dy-flip-clock-number-animated\': vm.isAnimated()}">\n' +
     '  <li\n' +
     '    ng-repeat="number in ::vm.numbers"\n' +
-    '    ng-class="{\'flip-clock-active\': vm.isActive(number), \'flip-clock-before\': vm.isBefore(number)}"\n' +
+    '    class="dy-flip-clock-number-digit"\n' +
+    '    ng-class="{\'dy-flip-clock-number-digit-active\': vm.isActive(number), \'dy-flip-clock-number-digit-before\': vm.isBefore(number)}"\n' +
     '  >\n' +
-    '    <a href="#">\n' +
-    '      <div class="up">\n' +
-    '        <div class="shadow"></div>\n' +
-    '        <div class="inn">{{::number}}</div>\n' +
+    '    <div class="dy-flip-clock-card">\n' +
+    '      <div class="dy-flip-clock-card-up">\n' +
+    '        <div class="dy-flip-clock-card-shadow"></div>\n' +
+    '        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">{{::number}}</div>\n' +
     '      </div>\n' +
-    '      <div class="down">\n' +
-    '        <div class="shadow"></div>\n' +
-    '        <div class="inn">{{::number}}</div>\n' +
+    '      <div class="dy-flip-clock-card-down">\n' +
+    '        <div class="dy-flip-clock-card-shadow"></div>\n' +
+    '        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">{{::number}}</div>\n' +
     '      </div>\n' +
-    '    </a>\n' +
+    '    </div>\n' +
     '  </li>\n' +
     '</ul>\n' +
     '');
