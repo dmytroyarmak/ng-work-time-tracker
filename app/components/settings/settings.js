@@ -3,7 +3,18 @@
 
   angular
     .module('workTimeTrackerApp')
-    .controller('SettingsCtrl', SettingsCtrl);
+    .controller('SettingsCtrl', SettingsCtrl)
+    .config(settingsRouteConfig);
+
+  settingsRouteConfig.$inject = ['$routeProvider'];
+  function settingsRouteConfig($routeProvider) {
+    $routeProvider
+      .when('/settings', {
+        templateUrl: 'app/components/settings/settings.html',
+        controller: 'SettingsCtrl',
+        controllerAs: 'vm'
+      });
+  }
 
   SettingsCtrl.$inject = ['activitiesService'];
   function SettingsCtrl(activitiesService) {

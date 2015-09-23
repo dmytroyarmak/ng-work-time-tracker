@@ -3,7 +3,18 @@
 
   angular
     .module('workTimeTrackerApp')
-    .controller('MainCtrl', MainCtrl);
+    .controller('MainCtrl', MainCtrl)
+    .config(mainRouteConfig);
+
+  mainRouteConfig.$inject = ['$routeProvider'];
+  function mainRouteConfig($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'app/components/main/main.html',
+        controller: 'MainCtrl',
+        controllerAs: 'vm'
+      });
+  }
 
   MainCtrl.$inject = ['activitiesService'];
   function MainCtrl(activitiesService) {

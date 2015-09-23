@@ -22,25 +22,7 @@
 
     <div ng-view class="bounce-animation"></div>
 
-    <ul class="menu-icons-panel" ng-controller="NavCtrl as vm">
-      <li>
-        <a tooltip="Track you time" ng-class="vm.getPageClass('')" href="#/">
-          <i class="fa fa-clock-o"></i>
-        </a>
-      </li>
-
-      <li>
-        <a tooltip="Statistics" ng-class="vm.getPageClass('statistics')" href="#/statistics">
-          <i class="fa fa-bar-chart-o"></i>
-        </a>
-      </li>
-
-      <li>
-        <a tooltip="Settings" ng-class="vm.getPageClass('settings')" href="#/settings">
-          <i class="fa fa-gear"></i>
-        </a>
-      </li>
-    </ul>
+    <navigation></navigation>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -51,10 +33,10 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
     <script src="app/app.js"></script>
-    <script src="app/controllers/nav.js"></script>
-    <script src="app/controllers/main.js"></script>
-    <script src="app/controllers/statistics.js"></script>
-    <script src="app/controllers/settings.js"></script>
+    <script src="app/components/main/main.js"></script>
+    <script src="app/components/statistics/statistics.js"></script>
+    <script src="app/components/settings/settings.js"></script>
+    <script src="app/directives/navigation/navigation.js"></script>
     <script src="app/filters/timeDuration.js"></script>
     <script src="app/services/activities.js"></script>
   </body>

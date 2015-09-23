@@ -3,7 +3,18 @@
 
   angular
     .module('workTimeTrackerApp')
-    .controller('StatisticsCtrl', StatisticsCtrl);
+    .controller('StatisticsCtrl', StatisticsCtrl)
+    .config(statisticsRouteConfig);
+
+  statisticsRouteConfig.$inject = ['$routeProvider'];
+  function statisticsRouteConfig($routeProvider) {
+    $routeProvider
+      .when('/statistics', {
+        templateUrl: 'app/components/statistics/statistics.html',
+        controller: 'StatisticsCtrl',
+        controllerAs: 'vm'
+      });
+  }
 
   StatisticsCtrl.$inject = ['activitiesService'];
   function StatisticsCtrl(activitiesService) {
