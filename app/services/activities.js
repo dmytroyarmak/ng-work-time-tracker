@@ -17,13 +17,15 @@
       }, 0);
     };
 
-    var Activity = function(name, color, duration) {
+    var Activity = function(name, color, initialTime) {
       this.name = name;
       this.color = color;
       this._timer = new Tock({
         interval: 1000,
         callback: _applyRootScope
       });
+      this._timer.start_time = initialTime || 0;
+      this._timer.pause_time = this._timer.start_time;
     };
 
     Activity.prototype.getDurationInPct = function() {
@@ -50,12 +52,12 @@
       return this._timer.lap();
     };
 
-    activities.push(new Activity('Working',     'default',  60*350));
-    activities.push(new Activity('Eating',      'primary',  60*40 ));
-    activities.push(new Activity('Rest',        'info',     60*50 ));
-    activities.push(new Activity('Web surfing', 'success',  60*100));
-    activities.push(new Activity('Off-topic',   'warning',  60*45 ));
-    activities.push(new Activity('Consulting',  'danger',   60*140));
+    activities.push(new Activity('Working', 'default'));
+    activities.push(new Activity('Eating', 'primary'));
+    activities.push(new Activity('Rest', 'info'));
+    activities.push(new Activity('Web surfing', 'success'));
+    activities.push(new Activity('Off-topic', 'warning'));
+    activities.push(new Activity('Consulting', 'danger'));
 
     function _applyRootScope () {
       if ($rootScope.$$phase !=='$apply' && $rootScope.$$phase !=='$digest') {
