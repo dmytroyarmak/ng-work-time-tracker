@@ -5,8 +5,8 @@
     .module('workTimeTrackerApp')
     .factory('Activity', activityFactory);
 
-  activityFactory.$inject = ['$rootScope', '$interval'];
-  function activityFactory($rootScope, $interval) {
+  activityFactory.$inject = ['$rootScope'];
+  function activityFactory($rootScope) {
     var Activity = function(name, color, initialTime) {
       this.name = name;
       this.color = color;
