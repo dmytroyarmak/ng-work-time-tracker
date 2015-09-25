@@ -8,7 +8,8 @@
       'ngRoute',
       'ngAnimate'
     ])
-    .config(workTimeTrackerAppConfig);
+    .config(workTimeTrackerAppConfig)
+    .run(workTimeTrackerAppRun);
 
   workTimeTrackerAppConfig.$inject = ['$routeProvider'];
   function workTimeTrackerAppConfig($routeProvider) {
@@ -16,5 +17,15 @@
       .otherwise({
         redirectTo: '/'
       });
+  }
+
+  workTimeTrackerAppRun.$inject = ['activitiesService'];
+  function workTimeTrackerAppRun (activitiesService) {
+    activitiesService.addNew('Working', 'default');
+    activitiesService.addNew('Eating', 'primary');
+    activitiesService.addNew('Rest', 'info');
+    activitiesService.addNew('Web surfing', 'success');
+    activitiesService.addNew('Off-topic', 'warning');
+    activitiesService.addNew('Consulting', 'danger');
   }
 }());

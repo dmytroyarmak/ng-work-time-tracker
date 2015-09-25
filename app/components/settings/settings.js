@@ -16,12 +16,12 @@
       });
   }
 
-  SettingsCtrl.$inject = ['activitiesService'];
-  function SettingsCtrl(activitiesService) {
+  SettingsCtrl.$inject = ['activitiesService', 'Activity'];
+  function SettingsCtrl(activitiesService, Activity) {
     var vm = this;
 
     vm.activities = null;
-    vm.availableColors = activitiesService.AVAILABLE_COLORS;
+    vm.availableColors = Activity.AVAILABLE_COLORS;
     vm.removeActiviry = removeActiviry;
     vm.addNewActivity = addNewActivity;
 

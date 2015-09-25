@@ -12,7 +12,7 @@
       <li ng-repeat="activity in vm.activities | orderBy:'duration':true" class="statistics-animation">
           <h5>{{activity.name}}</h5>
           <div class="progress">
-            <div class="progress-bar progress-bar-{{activity.color}}" style="width: {{activity.getDurationInPct()}}%">
+            <div class="progress-bar progress-bar-{{activity.color}}" style="width: {{vm.activities.getDurationInPct(activity)}}%">
               {{activity.getDuration() | timeDuration}}
             </div>
           </div>
