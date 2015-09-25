@@ -25,6 +25,7 @@
     "animate.css": "~3.1.0",
     "bootstrap": "~3.1.0",
     "font-awesome": "~4.0.3",
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "tock": "~1.0.8"
   }
 }

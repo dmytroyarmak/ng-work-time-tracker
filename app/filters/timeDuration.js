@@ -8,9 +8,9 @@
   timeDurationFilter.$inject = [];
   function timeDurationFilter() {
     return function(input) {
-      var s = input % 60,
-          m = Math.floor(input/60) % 60,
-          h = Math.floor(input/(60*60));
+      var s = Math.floor(input/1000) % 60,
+          m = Math.floor(input/(60*1000)) % 60,
+          h = Math.floor(input/(60*60*1000));
       return  (h > 0 ? (h + 'h ') : '') + (m > 0 ? (m + 'm ') : '') + s + 's';
     };
   }

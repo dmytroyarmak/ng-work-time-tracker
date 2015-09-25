@@ -8,24 +8,46 @@
   activitiesService.$inject = ['$rootScope', '$interval'];
   function activitiesService($rootScope, $interval) {
     var AVAILABLE_COLORS = ['default', 'primary', 'info', 'success', 'warning', 'danger'];
-    var activities = [],
-        intervalPromise,
-        currentActivity;
+    var activities = [];
+    var currentActivity;
 
     activities.getSumOfDurations = function() {
       return this.reduce(function(mem, act) {
-        return mem + act.duration;
+        return mem + act.getDuration();
       }, 0);
     };
 
     var Activity = function(name, color, duration) {
       this.name = name;
       this.color = color;
-      this.duration = 0;
+      this._timer = new Tock({
+        interval: 1000,
+        callback: _applyRootScope
+      });
     };
 
     Activity.prototype.getDurationInPct = function() {
-      return (this.duration / activities.getSumOfDurations()) * 100;
+      return (this.getDuration() / activities.getSumOfDurations()) * 100;
+    };
+
+    Activity.prototype.start = function() {
+      if (!this._timer.go) {
+        if (this._timer.pause_time) {
+          this._timer.pause();
+        } else {
+          this._timer.start();
+        }
+      }
+    };
+
+    Activity.prototype.stop = function() {
+      if (this._timer.go) {
+        this._timer.pause();
+      }
+    };
+
+    Activity.prototype.getDuration = function() {
+      return this._timer.lap();
     };
 
     activities.push(new Activity('Working',     'default',  60*350));
@@ -34,6 +56,12 @@
     activities.push(new Activity('Web surfing', 'success',  60*100));
     activities.push(new Activity('Off-topic',   'warning',  60*45 ));
     activities.push(new Activity('Consulting',  'danger',   60*140));
+
+    function _applyRootScope () {
+      if ($rootScope.$$phase !=='$apply' && $rootScope.$$phase !=='$digest') {
+        $rootScope.$apply();
+      }
+    }
 
     return {
       AVAILABLE_COLORS: AVAILABLE_COLORS,
@@ -58,17 +86,14 @@
       },
 
       setActive: function(activity) {
-        currentActivity = activity;
-        $rootScope.currentActivity = activity;
-
-        if (intervalPromise) {
-          $interval.cancel(intervalPromise);
-          intervalPromise = null;
+        if (activity !== currentActivity) {
+          if (currentActivity) {
+            currentActivity.stop();
+          }
+          activity.start();
+          currentActivity = activity;
+          $rootScope.currentActivity = activity;
         }
-
-        intervalPromise = $interval(function() {
-          activity.duration += 1;
-        }, 1000);
       },
 
       getActive: function() {

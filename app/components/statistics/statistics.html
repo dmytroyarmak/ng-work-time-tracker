@@ -13,7 +13,7 @@
           <h5>{{activity.name}}</h5>
           <div class="progress">
             <div class="progress-bar progress-bar-{{activity.color}}" style="width: {{activity.getDurationInPct()}}%">
-              {{activity.duration | timeDuration}}
+              {{activity.getDuration() | timeDuration}}
             </div>
           </div>
       </li>

@@ -43,7 +43,7 @@
     }
 
     function getDurationOfActiveActivity () {
-      return activitiesService.getActive().duration * 1000;
+      return activitiesService.getActive().getDuration();
     }
   }
 }());
