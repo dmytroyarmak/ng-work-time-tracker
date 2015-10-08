@@ -5,6 +5,7 @@ body {
   color: #222222;
   transition: background-color 0.5s;
   text-align: center;
+  overflow-y: scroll;
 }
 
 .color-default {
