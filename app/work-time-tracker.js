@@ -2,25 +2,30 @@
   'use strict';
 
   angular
-    .module('workTimeTrackerApp', [
+    .module('workTimeTracker', [
       'ui.bootstrap',
       'dyFlipClock',
       'ngRoute',
-      'ngAnimate'
-    ])
-    .config(workTimeTrackerAppConfig)
-    .run(workTimeTrackerAppRun);
+      'ngAnimate',
 
-  workTimeTrackerAppConfig.$inject = ['$routeProvider'];
-  function workTimeTrackerAppConfig($routeProvider) {
+      'workTimeTracker.components.main',
+      'workTimeTracker.components.settings',
+      'workTimeTracker.components.statistics',
+      'workTimeTracker.directives.navigation'
+    ])
+    .config(workTimeTrackerConfig)
+    .run(workTimeTrackerRun);
+
+  workTimeTrackerConfig.$inject = ['$routeProvider'];
+  function workTimeTrackerConfig($routeProvider) {
     $routeProvider
       .otherwise({
         redirectTo: '/'
       });
   }
 
-  workTimeTrackerAppRun.$inject = ['activitiesService'];
-  function workTimeTrackerAppRun (activitiesService) {
+  workTimeTrackerRun.$inject = ['activitiesService'];
+  function workTimeTrackerRun (activitiesService) {
     activitiesService.addNew('Working', 'default');
     activitiesService.addNew('Eating', 'primary');
     activitiesService.addNew('Rest', 'info');

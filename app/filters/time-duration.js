@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('workTimeTrackerApp')
+    .module('workTimeTracker.filters.timeDuration', [])
     .filter('timeDuration', timeDurationFilter);
 
   timeDurationFilter.$inject = [];

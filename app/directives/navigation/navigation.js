@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('workTimeTrackerApp')
+    .module('workTimeTracker.directives.navigation', [])
     .directive('navigation', navigationDirective)
     .controller('NavigationCtrl', NavigationCtrl);
 

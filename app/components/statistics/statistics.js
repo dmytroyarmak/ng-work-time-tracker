@@ -2,7 +2,10 @@
   'use strict';
 
   angular
-    .module('workTimeTrackerApp')
+    .module('workTimeTracker.components.statistics', [
+      'workTimeTracker.services.activities',
+      'workTimeTracker.filters.timeDuration'
+    ])
     .controller('StatisticsCtrl', StatisticsCtrl)
     .config(statisticsRouteConfig);
 

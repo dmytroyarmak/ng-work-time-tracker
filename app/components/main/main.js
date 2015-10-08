@@ -2,7 +2,9 @@
   'use strict';
 
   angular
-    .module('workTimeTrackerApp')
+    .module('workTimeTracker.components.main', [
+      'workTimeTracker.services.activities'
+    ])
     .controller('MainCtrl', MainCtrl)
     .config(mainRouteConfig);
 

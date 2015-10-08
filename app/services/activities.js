@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('workTimeTrackerApp')
+    .module('workTimeTracker.services.activities', [])
     .factory('activitiesService', activitiesService);
 
   activitiesService.$inject = ['$rootScope', '$interval', 'Activity'];
